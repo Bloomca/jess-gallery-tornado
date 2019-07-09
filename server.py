@@ -8,7 +8,7 @@ class HelloWorld(tornado.web.RequestHandler):
 def main():
   app = tornado.web.Application([
     ("/", HelloWorld)
-  ], debug=True, template_path="templates")
+  ], debug=True, template_path="templates", static_path="static")
   app.listen(8888)
   print("app is listening at http://localhost:8888")
   tornado.ioloop.IOLoop.current().start()
