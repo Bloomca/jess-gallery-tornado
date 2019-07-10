@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div data-slider class="slider">
+  <div class="slider-wrapper">
+    {% for slide in slides %}
+      <div class="slider-image" style="background-image: url({{slide}})"></div>
+    {% end %}
+  </div>
+</div>
+{% end %}

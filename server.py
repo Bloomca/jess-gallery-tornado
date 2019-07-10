@@ -1,9 +1,14 @@
 import tornado.web
 import tornado.ioloop
+import tornado.httpclient
+import json
 
 class HelloWorld(tornado.web.RequestHandler):
-  def get(self):
-    self.render("hello.html")
+  async def get(self):
+    http_client = tornado.httpclient.AsyncHTTPClient()
+    response = await http_client.fetch("https://node-api.jess.gallery/v1/slider_images")
+    slides = response.body.decode('utf-8')
+    self.render("main.html", slides=json.loads(slides))
 
 def main():
   app = tornado.web.Application([

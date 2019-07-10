@@ -8,7 +8,18 @@
   <title>Document</title>
 </head>
 <body>
-  Base title.
-  {% block content %}{% end %}
+    <div class="page-container">
+        <header class="header">
+          <a href="/">Home</a>
+          <a href="/art">Art</a>
+          <a href="/about">About</a>
+          <a href="/blog">Blog</a>
+        </header>
+        <div class="content">{% block content %}{% end %}</div>
+        <footer class="footer">
+          
+        </footer>
+      </div>
+      <script src="/static/index.js"></script>
 </body>
 </html>
